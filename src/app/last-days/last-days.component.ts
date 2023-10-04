@@ -8,6 +8,8 @@ import { ApiService } from 'src/services/api.service';
 })
 export class LastDaysComponent implements OnInit {
   apiData: any[] = [];
+  isPlusIconVisible = true;
+  isCardBodyVisible = false;
 
   constructor(private dataService: ApiService) { }
 
@@ -26,10 +28,28 @@ export class LastDaysComponent implements OnInit {
           const roundedCloseDiff = closeDiff.toFixed(2);
 
           response.data[i].closeDiff = parseFloat(roundedCloseDiff);
+          this.verifyCloseDiff(response.data[i]);
         }
       }
 
       this.apiData = response.data;
     });
   }
+
+  verifyCloseDiff(dataItem: any) {
+    if (dataItem.closeDiff >= 0) {
+      dataItem.cssClass = 'positive';
+    } else {
+      dataItem.cssClass = 'negative';
+    }
+  }
+
+  toggleIcon() {
+    this.isPlusIconVisible = !this.isPlusIconVisible;
+  }
+
+  toggleCardBody() {
+    this.isCardBodyVisible = !this.isCardBodyVisible;
+  }
+
 }

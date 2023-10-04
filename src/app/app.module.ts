@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CurrencyService } from 'src/services/currency.service';
 import { RateNowModule } from './rate-now/rate-now.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RateNowModule } from './rate-now/rate-now.module';
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    RateNowModule
+    RateNowModule,
+    MatIconModule
   ],
   providers: [CurrencyService],
   bootstrap: [AppComponent]

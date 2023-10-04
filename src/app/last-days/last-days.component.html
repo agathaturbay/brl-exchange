@@ -1,29 +1,49 @@
-<div class="parent align-horizontal">
-  <button class="btn-title">Last 30 days</button>
-</div>
+<div class="align-cards">
+    <button class="btn-title" (click)="toggleCardBody()">
+      Last 30 days
+      <ng-container *ngIf="isCardBodyVisible; else minusIcon">
+        <i class="fa-solid fa-minus"></i>
+      </ng-container>
+      <ng-template #minusIcon>
+        <i class="fa-solid fa-plus"></i>
+      </ng-template>
+    </button>
 
-<div class="card-body">
-  <div class="margin parent2" *ngFor="let item of apiData.slice(0, 30)">
-      <div class="div1 current-date">{{ item.date | date: 'dd/MM/yyyy' }}</div>
-    <div class="div2">
-      <div class="placeholder">Open:</div>
-      <div class="value">{{ item.open }}</div>
-    </div>
-    <div class="div3">
-      <div class="placeholder">High:</div>
-      <div class="value">{{ item.high }}</div>
-    </div>
-    <div class="div4">
-      <div class="placeholder">Close:</div>
-      <div class="value">{{ item.close }}</div>
-    </div>
-    <div class="div5">
-      <div class="placeholder">Low:</div>
-      <div class="value">{{ item.low }}</div>
-    </div>
-    <div class="div6">
-      <div class="placeholder">Close diff (%):</div>
-      <div class="close-diff-value">{{ item.closeDiff }}%</div>
+  <div class="card-body" *ngIf="isCardBodyVisible">
+    <div
+      class="parent2 card-shadow card"
+      *ngFor="let item of apiData.slice(0, 30)"
+    >
+      <div class="div1 current-date">{{ item.date | date : "dd/MM/yyyy" }}</div>
+      <div class="div2">
+        <div class="placeholder">Open:</div>
+        <div class="value">R$ {{ item.open }}</div>
+      </div>
+      <div class="div3">
+        <div class="placeholder">High:</div>
+        <div class="value">R$ {{ item.high }}</div>
+      </div>
+      <div class="div4">
+        <div class="placeholder">Close:</div>
+        <div class="value">R$ {{ item.close }}</div>
+      </div>
+      <div class="div5">
+        <div class="placeholder">Low:</div>
+        <div class="value">R$ {{ item.low }}</div>
+      </div>
+      <div class="div6">
+        <div class="placeholder">Close diff (%):</div>
+        <div class="close-diff-value" [class]="item.cssClass">
+          {{ item.closeDiff }}%
+          <i
+            [class]="
+              item.closeDiff >= 0
+                ? 'fa-sharp fa-solid fa-angle-up arrow-up'
+                : 'fa-sharp fa-solid fa-angle-up arrow-down'
+            "
+          ></i>
+        </div>
+      </div>
     </div>
   </div>
 </div>
