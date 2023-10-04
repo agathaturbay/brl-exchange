@@ -30,20 +30,18 @@ $positive: #69C669;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  width: 50%;
+  width: 100%;
 
-  @media (max-width: 1080px) {
-    width: 90%;
+  @media (min-width: 1080px) {
+    width: 50%;
   }
 }
 
 .grid-1 {
-  flex: 1;
   grid-area: 1 / 1 / 2 / 2;
 }
 
 .grid-2 {
-  flex: 1;
   grid-area: 1 / 2 / 2 / 3;
 }
 
