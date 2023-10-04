@@ -1,0 +1,77 @@
+/*I'm adding the colors here because they repeat themselsves. This way I don't have to declare them every time I use them*/
+
+$branded01: #07B0FB;
+$branded02: #009BC0;
+$branded03: #333333;
+$branded04: #5DC4E9;
+$branded05: #e6f7ff;
+$dark02: #3F3F3F;
+$dark03: #262626;
+$grey02: #D9D9D9;
+$grey03: #F4F4F4;
+$white: #FFFFFF;
+$warning: #E54E4E;
+
+.align-horizontal {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.align {
+  position: relative;
+  width: 100%;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 50%;
+
+  @media (max-width: 1080px) {
+    width: 90%;
+  }
+}
+
+.grid-1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.grid-2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.grid-3 {
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+.content-hr {
+  margin: 0 1rem;
+  background-color: $grey02;
+  height: 0.125rem;
+  border: none;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $branded01;
+  color: $white;
+  text-align: center;
+
+  .footer-text {
+    //styleName: Table/Pagination;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+
+  }
+}

@@ -1,0 +1,29 @@
+<div class="parent align-horizontal">
+  <button class="btn-title">Last 30 days</button>
+</div>
+
+<div class="card-body">
+  <div class="margin parent2" *ngFor="let item of apiData.slice(0, 30)">
+      <div class="div1 current-date">{{ item.date | date: 'dd/MM/yyyy' }}</div>
+    <div class="div2">
+      <div class="placeholder">Open:</div>
+      <div class="value">{{ item.open }}</div>
+    </div>
+    <div class="div3">
+      <div class="placeholder">High:</div>
+      <div class="value">{{ item.high }}</div>
+    </div>
+    <div class="div4">
+      <div class="placeholder">Close:</div>
+      <div class="value">{{ item.close }}</div>
+    </div>
+    <div class="div5">
+      <div class="placeholder">Low:</div>
+      <div class="value">{{ item.low }}</div>
+    </div>
+    <div class="div6">
+      <div class="placeholder">Close diff (%):</div>
+      <div class="close-diff-value">{{ item.closeDiff }}%</div>
+    </div>
+  </div>
+</div>

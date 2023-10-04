@@ -1,0 +1,92 @@
+@import "../styles.scss";
+
+
+.toolbar {
+  height: auto;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  margin: 1rem 0;
+
+  img {
+    width: 9.98425rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    margin: auto;
+    display: block;
+  }
+}
+
+.content {
+  position: relative;
+
+  .content-title {
+    color: $branded01;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.875rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+  }
+
+  .content-currency {
+    height: 4rem;
+
+    .currency-input {
+      width: 20.625rem;
+      height: 3.5rem;
+      flex-shrink: 0;
+      border-radius: 0.25rem 0.25rem 0rem 0rem;
+      background: var(--neutral-grey-03, #F4F4F4);
+      border: 0 none;
+      padding: 0 10px;
+
+    }
+
+  }
+
+
+  .content-button {
+    display: flex;
+    width: 20.625rem;
+    padding: 0.25rem 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6.25rem;
+    background: $branded01;
+    text-transform: uppercase;
+    color: $white;
+    text-align: center;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem;
+    /* 150% */
+    text-transform: uppercase;
+    border: 0 none;
+    margin: 1rem 0;
+  }
+
+}
+
+.margin {
+  margin: 5rem 0;
+}
+
+input::placeholder {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+input:focus {
+  outline: none;
+}

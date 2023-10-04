@@ -1,0 +1,50 @@
+@import '../../styles.scss';
+
+.exchange-rate {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: $branded03;
+}
+
+.date {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: $branded03;
+}
+
+.coin-exchange {
+    //styleName: Title/Admin H1;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: right;
+    color: $branded01;
+
+}
+
+.money-value {
+    height: 72px;
+    background-color: $branded05;
+
+    .money-typo {
+        font-family: Roboto;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: $branded01;
+        vertical-align: middle;
+        padding: 1rem 0;
+    }
+}
