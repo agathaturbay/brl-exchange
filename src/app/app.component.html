@@ -1,21 +1,19 @@
 <div class="content-body">
-
   <div class="toolbar" role="banner">
     <button class="header-btn" (click)="hideInputValue()">
       <img src="../assets/Action Labs.png" alt="Actions Lab Logo">
     </button>
   </div>
-
   <hr class="content-hr">
 
-
-  <div class="content align" role="main">
+  <div class="content" role="main">
     <div class="content-title">
       BRL Exchange Rate
     </div>
 
-    <div class="content-currency">
-      <input id="exchange" class="currency-input" placeholder="Enter the currency code" [(ngModel)]="currencyValue">
+    <div class="content-currency form-group">
+      <label for="currency-input" class="form-label">Enter the currency code</label>
+      <input id="currency-input" class="currency-input" (focus)="handleInputFocus($event)" (blur)="handleInputBlur($event)" />
     </div>
 
     <div class="vertical-center">
@@ -36,6 +34,5 @@
       <div class="footer-text">Copyright 2023 - Action Labs</div>
     </div>
   </div>
-
 
 </div>

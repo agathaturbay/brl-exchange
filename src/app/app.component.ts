@@ -24,4 +24,20 @@ export class AppComponent {
     this.showComponents = false;
   }
 
+  handleInputFocus(event: Event) {
+    const target = event.target as HTMLInputElement;
+    target.parentElement?.classList.add('focused');
+  }
+
+  handleInputBlur(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const inputValue = target.value;
+
+    if (inputValue === "") {
+      target.classList.remove('filled');
+      target.parentElement?.classList.remove('focused');
+    } else {
+      target.classList.add('filled');
+    }
+  }
 }

@@ -21,7 +21,6 @@
 }
 
 .coin-exchange {
-    //styleName: Title/Admin H1;
     font-family: Roboto;
     font-size: 24px;
     font-weight: 700;
@@ -35,6 +34,8 @@
 .money-value {
     height: 72px;
     background-color: $branded05;
+    display: flex; /* Usar flexbox para centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
 
     .money-typo {
         font-family: Roboto;
@@ -50,5 +51,7 @@
 }
 
 .rate-content{
-  margin: 1.88rem 0.94rem;
+  margin: 1.88rem auto;
+  display: flex;
+  flex-direction: column;
 }

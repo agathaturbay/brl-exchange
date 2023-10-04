@@ -1,22 +1,5 @@
 @import "../styles.scss";
 
-
-.toolbar {
-  height: auto;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  margin: 1rem 0;
-  width: 100vw;
-  text-align: center;
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .content {
   position: relative;
 
@@ -25,7 +8,6 @@
     text-align: center;
     font-family: Roboto;
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 700;
     line-height: 1.875rem;
     text-transform: uppercase;
@@ -33,66 +15,122 @@
   }
 
   .content-currency {
-    height: 4rem;
+    display: flex;
+    flex-direction: column;
 
     .currency-input {
-      width: calc(100% - 1.8rem);
-      margin: 0 0.94rem;
       height: 3.5rem;
       flex-shrink: 0;
       border-radius: 0.25rem 0.25rem 0rem 0rem;
-      background: var(--neutral-grey-03, #F4F4F4);
-      border: 0 none;
+      background: $grey03;
+      border: none;
       display: block;
       padding-left: 1rem;
-    }
+      transition: box-shadow 150ms ease-out;
+      &:focus {
+        box-shadow: 0 2px 0 0 $branded01;
+      }
 
+      &:focus + .form-label {
+        transform: translateY(-125%);
+        font-size: 0.75em;
+      }
+
+      @media (min-width: 820px) {
+        width: calc(60% - 1.8rem);
+        margin: 0 auto;
+      }
+    }
   }
 
-
   .content-button {
-    width: calc(100% - 1.8rem);
-    margin: 2rem 0.94rem;
+    width: 100%;
+    margin: 2rem 0;
     padding: 0.5rem 0;
     border-radius: 6.25rem;
     background: $branded01;
     color: $white;
     font-family: Roboto;
     font-size: 1rem;
-    font-style: normal;
     font-weight: 500;
     line-height: 1.5rem;
     text-transform: uppercase;
-    border: 0 none;
+    border: none;
     display: block;
     box-sizing: border-box;
 
-    @media (min-width: 820px){
-      width: calc(60vw - 1.8rem);
+    @media (min-width: 820px) {
+      width: calc(61.25% - 1.8rem);
+      margin: 2rem auto;
     }
-}
-
-
+  }
 }
 
 .margin {
   margin: 5rem 0;
 }
 
-input::placeholder {
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0px;
-}
-
 input:focus {
   outline: none;
 }
 
+.content-body {
+  width: calc(100% - 1.8rem);
+  margin: 0 auto;
 
-.header-btn {
-  background-color: $white;
-  border: 0 none;
+
+  .toolbar {
+    height: auto;
+    align-items: center;
+    color: $white;
+    font-weight: 600;
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+
+    .header-btn {
+      background-color: $white;
+      border: none;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.form-group {
+  position:relative;
+
+  & + .form-group {
+    margin-top: 30px;
+  }
+}
+
+.form-label {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  position: absolute;
+  top: 20px;
+  left: 22%;
+  color: $dark02;
+  z-index: 10;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+  @media(max-width: 800px){
+    left: 5%;
+  }
+}
+
+.focused .form-label {
+  transform: translateY(-75%);
+  font-size: .75em;
+  color: $branded01;
+
+}
+
+.form-input.filled {
+  box-shadow: 0 2px 0 0 lightgreen;
 }

@@ -50,7 +50,7 @@ $positive: #69C669;
 }
 
 .content-hr {
-  width: calc(100vw - 1.88rem);
+  width: calc(100% - 1.88rem);
   margin: 0 0.94rem;
   background-color: $grey02;
   height: 0.125rem;
@@ -118,3 +118,4 @@ $positive: #69C669;
 .div6 {
   grid-area: 4 / 1 / 5 / 3;
 }
+
