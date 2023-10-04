@@ -10,7 +10,7 @@
   border-bottom: solid 2px $branded01;
   background-color: $white;
   width: 100%;
-  margin: 2rem 0;
+  margin-top: 2rem;
   text-align: left;
   display: flex;
   justify-content: space-between;
@@ -36,9 +36,11 @@
   background-color: $grey03;
   padding: 0.005rem 0;
   display: block;
+  margin-bottom: 4.25rem;
+  border-bottom: solid 0.125rem $branded01;
 
   .card {
-    margin: 1rem 0.62rem;
+    margin: 0.62rem;
     background-color: $white;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.10);
     padding: 1rem;

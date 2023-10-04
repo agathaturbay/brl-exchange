@@ -32,7 +32,7 @@ describe('RateNowComponent', () => {
 
   it('should fetch data from ApiService when CurrencyService emits a value', () => {
     const currencyValue = 'BTC';
-    const mockApiResponse = { /* Mock your API response here */ };
+    const mockApiResponse = { };
 
     mockCurrencyService.setCurrencyValue.and.returnValue(of(currencyValue));
     mockApiService.getDados.and.returnValue(of(mockApiResponse));
@@ -57,7 +57,7 @@ describe('RateNowComponent', () => {
     component.ngOnInit();
 
     fixture.whenStable().then(() => {
-      expect(component.dados.exchangeRate).toEqual('123,46'); // Check the formatted value
+      expect(component.dados.exchangeRate).toEqual('123,46');
     });
   });
 });

@@ -38,8 +38,10 @@
       }
 
       @media (min-width: 820px) {
-        width: calc(60% - 1.8rem);
+        width: 60%;
         margin: 0 auto;
+        max-width: 1080px;
+
       }
     }
   }
@@ -61,8 +63,10 @@
     box-sizing: border-box;
 
     @media (min-width: 820px) {
-      width: calc(61.25% - 1.8rem);
+      width: 61.5%;
       margin: 2rem auto;
+      max-width: 1080px;
+
     }
   }
 }
@@ -116,7 +120,7 @@ input:focus {
   line-height: 24px;
   position: absolute;
   top: 20px;
-  left: 22%;
+  left: 20.5%;
   color: $dark02;
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;

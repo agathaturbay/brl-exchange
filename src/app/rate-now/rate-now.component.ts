@@ -9,7 +9,6 @@ import { CurrencyService } from 'src/services/currency.service';
 })
 export class RateNowComponent implements OnInit {
   dados: any;
-  //currentCurrency: string;
 
   constructor(private apiService: ApiService, private currencyService: CurrencyService) {
   }

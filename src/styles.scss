@@ -33,7 +33,8 @@ $positive: #69C669;
   width: 100%;
 
   @media (min-width: 1080px) {
-    width: 50%;
+    width: 61.5%;
+    max-width: 1080px;
   }
 }
 
