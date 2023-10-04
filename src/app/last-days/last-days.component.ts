@@ -19,26 +19,37 @@ export class LastDaysComponent implements OnInit {
   }
 
   loadDataFromApi() {
-    this.currencyService.setCurrencyValue().subscribe(value => {
-      this.dataService.getLastMonth(value).subscribe((response: any) => {
-        if (response.data.length >= 2) {
-          for (let i = 0; i < response.data.length - 1; i++) {
-            const currentClose = response.data[i].close;
-            const previousClose = response.data[i + 1].close;
-            const closeDiff = ((currentClose - previousClose) / previousClose) * 100;
+    this.currencyService.setCurrencyValue().subscribe(currencyValue => {
+      this.dataService.getLastMonth(currencyValue).subscribe(
+        (response: any) => this.handleApiResponse(response),
+        (error) => this.handleApiError(error)
+      );
+    });
+  }
 
-            const roundedCloseDiff = closeDiff.toFixed(2);
+  private handleApiResponse(response: any) {
+    if (response.data.length >= 2) {
+      const modifiedData = this.calculateCloseDifferences(response.data);
+      this.apiData = modifiedData;
+    }
+  }
 
-            response.data[i].closeDiff = parseFloat(roundedCloseDiff);
-            this.verifyCloseDiff(response.data[i]);
-          }
-        }
+  private calculateCloseDifferences(data: any[]): any[] {
+    return data.map((item, index) => {
+      if (index < data.length - 1) {
+        const currentClose = item.close;
+        const previousClose = data[index + 1].close;
+        const closeDiff = ((currentClose - previousClose) / previousClose) * 100;
+        const roundedCloseDiff = parseFloat(closeDiff.toFixed(2));
+        item.closeDiff = roundedCloseDiff;
+        this.verifyCloseDiff(item);
+      }
+      return item;
+    });
+  }
 
-        this.apiData = response.data;
-      });
-
-    })
-
+  private handleApiError(error: any) {
+    console.error('Erro na requisição da API:', error);
   }
 
   verifyCloseDiff(dataItem: any) {
