@@ -17,7 +17,8 @@ export class AppComponent {
 
   showInputValue() {
     this.showComponents = true;
-    this.currencyService.setCurrencyValue(this.currencyValue);
+    console.log(this.currencyValue);
+    this.currencyService.getCurrencyValue(this.currencyValue);
   }
 
   hideInputValue() {

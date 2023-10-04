@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
+import { CurrencyService } from 'src/services/currency.service';
 
 @Component({
   selector: 'app-last-days',
@@ -11,29 +12,34 @@ export class LastDaysComponent implements OnInit {
   isPlusIconVisible = true;
   isCardBodyVisible = false;
 
-  constructor(private dataService: ApiService) { }
+  constructor(private dataService: ApiService,  private currencyService: CurrencyService) { }
 
   ngOnInit() {
     this.loadDataFromApi();
   }
 
   loadDataFromApi() {
-    this.dataService.getLastMonth().subscribe((response: any) => {
-      if (response.data.length >= 2) {
-        for (let i = 0; i < response.data.length - 1; i++) {
-          const currentClose = response.data[i].close;
-          const previousClose = response.data[i + 1].close;
-          const closeDiff = ((currentClose - previousClose) / previousClose) * 100;
 
-          const roundedCloseDiff = closeDiff.toFixed(2);
+    this.currencyService.setCurrencyValue().subscribe(value => {
+      this.dataService.getLastMonth(value).subscribe((response: any) => {
+        if (response.data.length >= 2) {
+          for (let i = 0; i < response.data.length - 1; i++) {
+            const currentClose = response.data[i].close;
+            const previousClose = response.data[i + 1].close;
+            const closeDiff = ((currentClose - previousClose) / previousClose) * 100;
 
-          response.data[i].closeDiff = parseFloat(roundedCloseDiff);
-          this.verifyCloseDiff(response.data[i]);
+            const roundedCloseDiff = closeDiff.toFixed(2);
+
+            response.data[i].closeDiff = parseFloat(roundedCloseDiff);
+            this.verifyCloseDiff(response.data[i]);
+          }
         }
-      }
 
-      this.apiData = response.data;
-    });
+        this.apiData = response.data;
+      });
+
+    })
+
   }
 
   verifyCloseDiff(dataItem: any) {

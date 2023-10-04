@@ -13,12 +13,13 @@
 
     <div class="content-currency form-group">
       <label for="currency-input" class="form-label">Enter the currency code</label>
-      <input id="currency-input" class="currency-input" (focus)="handleInputFocus($event)" (blur)="handleInputBlur($event)" />
+      <input id="currency-input" class="currency-input" [(ngModel)]="currencyValue" (focus)="handleInputFocus($event)" (blur)="handleInputBlur($event)" />
     </div>
 
     <div class="vertical-center">
       <button class="content-button" (click)="showInputValue()">Exchange Result</button>
     </div>
+
 
     <hr class="content-hr">
 

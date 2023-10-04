@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { CurrencyService } from 'src/services/currency.service';
 
 @Component({
   selector: 'app-rate-now',
@@ -8,14 +9,22 @@ import { ApiService } from '../../services/api.service';
 })
 export class RateNowComponent implements OnInit {
   dados: any;
+  //currentCurrency: string;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private currencyService: CurrencyService) {
+  }
 
   ngOnInit(): void {
-    this.apiService.getDados().subscribe((response) => {
-      this.dados = response;
-      this.formatarValor(this.dados, 'exchangeRate');
-    });
+
+
+    this.currencyService.setCurrencyValue().subscribe(value => {
+      console.log('form data', value);
+      this.apiService.getDados(value).subscribe((response) => {
+        this.dados = response;
+        this.formatarValor(this.dados, 'exchangeRate');
+
+      });
+    })
   }
 
   formatarValor(objeto: any, propriedade: string): void {

@@ -13,15 +13,13 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDados(): Observable<any> {
-    console.log(`${this.todayApi}&from_symbol=USD&to_symbol=BRL`)
-    return this.http.get(`${this.todayApi}&from_symbol=USD&to_symbol=BRL`);
+  getDados(coin: string): Observable<any> {
+    return this.http.get(`${this.todayApi}&from_symbol=${coin}&to_symbol=BRL`);
   }
 
 
-  getLastMonth(): Observable<any> {
-    console.log(`${this.lastMonthApi}&from_symbol=USD&to_symbol=BRL`)
-    return this.http.get(`${this.lastMonthApi}&from_symbol=USD&to_symbol=BRL`);
+  getLastMonth(coin: string): Observable<any> {
+    return this.http.get(`${this.lastMonthApi}&from_symbol=${coin}&to_symbol=BRL`);
   }
 }
 
