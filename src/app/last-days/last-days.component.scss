@@ -22,8 +22,15 @@
 
   i.fa-solid {
     color: $branded01;
+    padding-bottom: 1rem;
   }
+
 }
+
+.btn-title.visible {
+  border: none;
+}
+
 
 .card-body {
   background-color: $grey03;

@@ -19,13 +19,14 @@
     flex-direction: column;
 
     .currency-input {
-      height: 3.5rem;
+      height: 2.75rem;
       flex-shrink: 0;
       border-radius: 0.25rem 0.25rem 0rem 0rem;
       background: $grey03;
       border: none;
       display: block;
       padding-left: 1rem;
+      padding-top: 0.8rem;
       transition: box-shadow 150ms ease-out;
       &:focus {
         box-shadow: 0 2px 0 0 $branded01;
