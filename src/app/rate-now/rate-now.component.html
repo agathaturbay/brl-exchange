@@ -1,14 +1,14 @@
 <div class="parent align-horizontal rate-content">
   <div class="grid-1">
     <div class=" exchange-rate">Exchange rate now</div>
-    <div class="date">{{ dados.lastUpdatedAt | date: 'dd/MM/yyyy' }}</div>
+    <div class="date">{{ dados?.lastUpdatedAt | date: 'dd/MM/yyyy - HH:mm' }}</div>
   </div>
   <div class="grid-2 coin-exchange">
-    {{ dados.fromSymbol }} / {{ dados.toSymbol }}
+    {{ dados?.fromSymbol }} / {{ dados?.toSymbol }}
   </div>
   <div class="grid-3 money-value">
     <div class="money-typo">
-      R$ {{ dados.exchangeRate.toFixed(2) }}
+      R$ {{ dados?.exchangeRate }}
     </div>
   </div>
 </div>
