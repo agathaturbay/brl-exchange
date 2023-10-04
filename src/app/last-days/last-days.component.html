@@ -1,6 +1,6 @@
 <div class="align-cards">
   <button class="btn-title" (click)="toggleCardBody()">
-    <span>Last 30 days</span>
+    <span class="title-text">Last 30 days</span>
     <ng-container *ngIf="isCardBodyVisible; else minusIcon">
       <i class="fa-solid fa-minus"></i>
     </ng-container>
@@ -8,9 +8,6 @@
       <i class="fa-solid fa-plus"></i>
     </ng-template>
   </button>
-
-
-
 
   <div class="card-body" *ngIf="isCardBodyVisible">
     <div

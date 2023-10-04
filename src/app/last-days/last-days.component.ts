@@ -19,7 +19,6 @@ export class LastDaysComponent implements OnInit {
   }
 
   loadDataFromApi() {
-
     this.currencyService.setCurrencyValue().subscribe(value => {
       this.dataService.getLastMonth(value).subscribe((response: any) => {
         if (response.data.length >= 2) {
