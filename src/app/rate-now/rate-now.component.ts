@@ -18,11 +18,9 @@ export class RateNowComponent implements OnInit {
 
 
     this.currencyService.setCurrencyValue().subscribe(value => {
-      console.log('form data', value);
       this.apiService.getDados(value).subscribe((response) => {
         this.dados = response;
         this.formatarValor(this.dados, 'exchangeRate');
-
       });
     })
   }

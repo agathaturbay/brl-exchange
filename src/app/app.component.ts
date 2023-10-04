@@ -12,12 +12,12 @@ export class AppComponent {
   title = 'brl-exchange';
   currencyValue: string = '';
   showComponents: boolean = false;
+  isInputEmpty: boolean = true;
 
   constructor(private currencyService: CurrencyService) {}
 
   showInputValue() {
     this.showComponents = true;
-    console.log(this.currencyValue);
     this.currencyService.getCurrencyValue(this.currencyValue);
   }
 
@@ -40,5 +40,9 @@ export class AppComponent {
     } else {
       target.classList.add('filled');
     }
+  }
+
+  updateInputEmptyState() {
+    this.isInputEmpty = this.currencyValue.trim() === '';
   }
 }

@@ -38,24 +38,34 @@ $positive: #69C669;
 }
 
 .grid-1 {
+  flex: 1;
   grid-area: 1 / 1 / 2 / 2;
 }
 
 .grid-2 {
+  flex: 1;
   grid-area: 1 / 2 / 2 / 3;
 }
 
 .grid-3 {
+
   grid-area: 2 / 1 / 3 / 3;
 }
 
 .content-hr {
-  width: calc(100% - 1.88rem);
-  margin: 0 0.94rem;
+  width: 100%;
+  margin: 0 auto;
   background-color: $grey02;
-  height: 0.125rem;
   border: none;
   display: block;
+}
+
+.up-hr {
+  height: 0.125rem;
+}
+
+.down-hr {
+  height: 0.0625rem;;
 }
 
 .footer {
@@ -68,7 +78,6 @@ $positive: #69C669;
   text-align: center;
 
   .footer-text {
-    //styleName: Table/Pagination;
     font-family: Roboto;
     font-size: 12px;
     font-weight: 400;

@@ -4,7 +4,7 @@
       <img src="../assets/Action Labs.png" alt="Actions Lab Logo">
     </button>
   </div>
-  <hr class="content-hr">
+  <hr class="content-hr up-hr">
 
   <div class="content" role="main">
     <div class="content-title">
@@ -13,15 +13,14 @@
 
     <div class="content-currency form-group">
       <label for="currency-input" class="form-label">Enter the currency code</label>
-      <input id="currency-input" class="currency-input" [(ngModel)]="currencyValue" (focus)="handleInputFocus($event)" (blur)="handleInputBlur($event)" />
+      <input id="currency-input" class="currency-input" [(ngModel)]="currencyValue" (focus)="handleInputFocus($event)" (blur)="handleInputBlur($event)" (input)="updateInputEmptyState()" />
     </div>
 
     <div class="vertical-center">
-      <button class="content-button" (click)="showInputValue()">Exchange Result</button>
+      <button class="content-button" (click)="showInputValue()" [disabled]="isInputEmpty">Exchange Result</button>
     </div>
 
-
-    <hr class="content-hr">
+    <hr class="content-hr down-hr">
 
     <div class="rate-now">
       <app-rate-now *ngIf="showComponents"></app-rate-now>
