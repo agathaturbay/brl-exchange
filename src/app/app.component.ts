@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/services/api.service';
 import { CurrencyService } from 'src/services/currency.service';
 
 
@@ -19,6 +18,10 @@ export class AppComponent {
   showInputValue() {
     this.showComponents = true;
     this.currencyService.setCurrencyValue(this.currencyValue);
+  }
+
+  hideInputValue() {
+    this.showComponents = false;
   }
 
 }

@@ -1,33 +1,41 @@
-<div class="toolbar" role="banner">
-  <img src="../assets/Action Labs.png" alt="Actions Lab Logo">
+<div class="content-body">
+
+  <div class="toolbar" role="banner">
+    <button class="header-btn" (click)="hideInputValue()">
+      <img src="../assets/Action Labs.png" alt="Actions Lab Logo">
+    </button>
+  </div>
+
+  <hr class="content-hr">
+
+
+  <div class="content align" role="main">
+    <div class="content-title">
+      BRL Exchange Rate
+    </div>
+
+    <div class="content-currency">
+      <input id="exchange" class="currency-input" placeholder="Enter the currency code" [(ngModel)]="currencyValue">
+    </div>
+
+    <div class="vertical-center">
+      <button class="content-button" (click)="showInputValue()">Exchange Result</button>
+    </div>
+
+    <hr class="content-hr">
+
+    <div class="rate-now">
+      <app-rate-now *ngIf="showComponents"></app-rate-now>
+    </div>
+
+    <div class="last-days">
+      <app-last-days *ngIf="showComponents"></app-last-days>
+    </div>
+
+    <div class="footer">
+      <div class="footer-text">Copyright 2023 - Action Labs</div>
+    </div>
+  </div>
+
+
 </div>
-
-<hr class="content-hr">
-
-
-<div class="content align" role="main">
-  <div class="content-title">
-    BRL Exchange Rate
-  </div>
-
-  <div class="content-currency vertical-center">
-    <input id="exchange" class="currency-input align-horizontal" placeholder="Enter the currency code" [(ngModel)]="currencyValue">
-  </div>
-
-  <div class="vertical-center align-horizontal">
-    <button class="content-button" (click)="showInputValue()">Exchange Result</button>
-  </div>
-
-  <hr class="content-hr margin">
-
-  <app-rate-now *ngIf="showComponents"></app-rate-now>
-  <app-last-days *ngIf="showComponents"></app-last-days>
-
-</div>
-
-
-
-
-  <div class="footer">
-    <div class="footer-text">Copyright 2023 - Action Labs</div>
-  </div>
