@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
+import { CurrencyService } from 'src/services/currency.service';
+
 
 @Component({
   selector: 'app-root',
@@ -12,11 +14,11 @@ export class AppComponent {
   currencyValue: string = '';
   showComponents: boolean = false;
 
-  constructor(private ApiService: ApiService) {}
+  constructor(private currencyService: CurrencyService) {}
 
   showInputValue() {
-    this.ApiService.setCurrencyValue(this.currencyValue);
     this.showComponents = true;
+    this.currencyService.setCurrencyValue(this.currencyValue);
   }
 
 }

@@ -6,6 +6,8 @@ import { LastDaysComponent } from './last-days/last-days.component';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { CurrencyService } from 'src/services/currency.service';
+import { RateNowModule } from './rate-now/rate-now.module';
 
 
 @NgModule({
@@ -17,9 +19,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     HttpClientModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RateNowModule
   ],
-  providers: [],
+  providers: [CurrencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

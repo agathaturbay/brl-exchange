@@ -50,27 +50,27 @@
 
 
   .content-button {
-    display: flex;
-    width: 20.625rem;
-    padding: 0.25rem 1rem;
-    justify-content: center;
-    align-items: center;
+    width: calc(100vw - 1.8rem);
+    margin: 0 0.9rem;
+    padding: 0.5rem 0;
     border-radius: 6.25rem;
     background: $branded01;
-    text-transform: uppercase;
     color: $white;
-    text-align: center;
-    font-variant-numeric: lining-nums tabular-nums;
     font-family: Roboto;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.5rem;
-    /* 150% */
     text-transform: uppercase;
     border: 0 none;
-    margin: 1rem 0;
-  }
+    display: block;
+    box-sizing: border-box;
+
+    @media (min-width: 820px){
+      width: calc(60vw - 1.8rem);
+    }
+}
+
 
 }
 
