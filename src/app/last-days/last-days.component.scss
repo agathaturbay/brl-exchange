@@ -12,6 +12,9 @@
   width: calc(100% - 1.88rem);
   margin: 2rem 0;
   text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 
   .fa-solid, .fa-minus, .fa-plus {

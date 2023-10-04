@@ -1,13 +1,16 @@
 <div class="align-cards">
-    <button class="btn-title" (click)="toggleCardBody()">
-      Last 30 days
-      <ng-container *ngIf="isCardBodyVisible; else minusIcon">
-        <i class="fa-solid fa-minus"></i>
-      </ng-container>
-      <ng-template #minusIcon>
-        <i class="fa-solid fa-plus"></i>
-      </ng-template>
-    </button>
+  <button class="btn-title" (click)="toggleCardBody()">
+    <span>Last 30 days</span>
+    <ng-container *ngIf="isCardBodyVisible; else minusIcon">
+      <i class="fa-solid fa-minus"></i>
+    </ng-container>
+    <ng-template #minusIcon>
+      <i class="fa-solid fa-plus"></i>
+    </ng-template>
+  </button>
+
+
+
 
   <div class="card-body" *ngIf="isCardBodyVisible">
     <div
