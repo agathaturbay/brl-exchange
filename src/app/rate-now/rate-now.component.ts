@@ -14,8 +14,6 @@ export class RateNowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
     this.currencyService.setCurrencyValue().subscribe(value => {
       this.apiService.getDados(value).subscribe((response) => {
         this.dados = response;
