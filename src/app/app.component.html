@@ -21,9 +21,8 @@
 
   <hr class="content-hr margin">
 
-  <app-rate-now></app-rate-now>
-
-  <app-last-days></app-last-days>
+  <app-rate-now *ngIf="showComponents"></app-rate-now>
+  <app-last-days *ngIf="showComponents"></app-last-days>
 
 
   <div class="footer">

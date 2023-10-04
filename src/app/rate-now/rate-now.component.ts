@@ -7,7 +7,6 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./rate-now.component.scss']
 })
 export class RateNowComponent implements OnInit {
-
   dados: any;
 
   constructor(private apiService: ApiService) { }
@@ -15,6 +14,7 @@ export class RateNowComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getDados().subscribe((response) => {
       this.dados = response;
+      console.log(response);
     });
   }
 }

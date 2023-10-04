@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   getDados(): Observable<any> {
-    return this.http.get(`${this.todayApi}&from_symbol=${this.currencyValue}&to_symbol=BRL`);
+    return this.http.get(`${this.todayApi}&from_symbol=EUR&to_symbol=BRL`);
   }
 
   getLastMonth(): Observable<any> {
