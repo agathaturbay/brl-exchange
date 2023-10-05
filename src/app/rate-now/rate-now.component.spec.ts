@@ -8,7 +8,7 @@ describe('RateNowComponent', () => {
   let component: RateNowComponent;
   let fixture: ComponentFixture<RateNowComponent>;
 
-  const mockApiService = jasmine.createSpyObj('ApiService', ['getDados']);
+  const mockApiService = jasmine.createSpyObj('ApiService', ['getData']);
   const mockCurrencyService = jasmine.createSpyObj('CurrencyService', ['setCurrencyValue']);
 
   beforeEach(async(() => {
@@ -35,12 +35,12 @@ describe('RateNowComponent', () => {
     const mockApiResponse = { };
 
     mockCurrencyService.setCurrencyValue.and.returnValue(of(currencyValue));
-    mockApiService.getDados.and.returnValue(of(mockApiResponse));
+    mockApiService.getData.and.returnValue(of(mockApiResponse));
 
     component.ngOnInit();
 
     expect(mockCurrencyService.setCurrencyValue).toHaveBeenCalled();
-    expect(mockApiService.getDados).toHaveBeenCalledWith(currencyValue);
+    expect(mockApiService.getData).toHaveBeenCalledWith(currencyValue);
 
     fixture.whenStable().then(() => {
       expect(component.dados).toEqual(mockApiResponse);
@@ -52,7 +52,7 @@ describe('RateNowComponent', () => {
     const mockApiResponse = { exchangeRate: 123.456 };
 
     mockCurrencyService.setCurrencyValue.and.returnValue(of(currencyValue));
-    mockApiService.getDados.and.returnValue(of(mockApiResponse));
+    mockApiService.getData.and.returnValue(of(mockApiResponse));
 
     component.ngOnInit();
 

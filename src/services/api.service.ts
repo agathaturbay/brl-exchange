@@ -13,7 +13,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDados(coin: string): Observable<any> {
+  getData(coin: string): Observable<any> {
     return this.http.get(`${this.todayApi}&from_symbol=${coin}&to_symbol=BRL`);
   }
 

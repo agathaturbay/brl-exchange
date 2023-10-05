@@ -15,18 +15,18 @@ export class RateNowComponent implements OnInit {
 
   ngOnInit(): void {
     this.currencyService.setCurrencyValue().subscribe(value => {
-      this.apiService.getDados(value).subscribe((response) => {
+      this.apiService.getData(value).subscribe((response) => {
         this.dados = response;
-        this.formatarValor(this.dados, 'exchangeRate');
+        this.formatValue(this.dados, 'exchangeRate');
       });
     })
   }
 
-  formatarValor(objeto: any, propriedade: string): void {
-    if (objeto && objeto[propriedade] !== undefined) {
-      const valorNumerico = objeto[propriedade].toFixed(2);
+  formatValue(objeto: any, property: string): void {
+    if (objeto && objeto[property] !== undefined) {
+      const valorNumerico = objeto[property].toFixed(2);
       const valorFormatado = valorNumerico.replace('.', ',');
-      objeto[propriedade] = valorFormatado;
+      objeto[property] = valorFormatado;
     }
   }
 }

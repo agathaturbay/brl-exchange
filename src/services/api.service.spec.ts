@@ -32,7 +32,7 @@ describe('ApiService', () => {
     "success": true
   };
 
-    service.getDados(coin).subscribe((response) => {
+    service.getData(coin).subscribe((response) => {
       expect(response).toEqual(mockResponse);
     });
 
