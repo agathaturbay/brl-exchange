@@ -124,8 +124,16 @@ input:focus {
   color: $dark02;
   z-index: 10;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
-  @media(max-width: 800px){
+  @media(max-width: 760px){
     left: 5%;
+  }
+
+  @media(min-width: 761px) and (max-width: 800px){
+    left: 1.5%;
+  }
+
+  @media(min-width: 801px) and (max-width: 1080px){
+    left: 20.5%;
   }
 }
 
